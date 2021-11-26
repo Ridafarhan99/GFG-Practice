@@ -5,11 +5,12 @@ using namespace std;
 int main(){
 	unordered_map<int, int> mp;
 	unordered_map<int, int> :: iterator it;
+	
 	int len;
 	cin >> len;
+	int arr[len]={1,1,2,2,3,3,7,6,5,4};
 	for(int i=0;i<len;i++){
-		int val;
-		cin >> val;
+		int val = arr[i];
 		if(!mp[val]){
 			mp[val]=1;
 		}else{
@@ -19,9 +20,8 @@ int main(){
 	int count=0;
 	for(it=mp.begin();it!=mp.end();it++){
 		if(it->second==1){
-			count++;
+			cout << it->first << " ";
 		}
 	}
-	cout << count;
 	return 0;
 }
